@@ -1,15 +1,17 @@
 import "./Counter.css";
 
 const Counter = (props) => {
+    const CHANGE_STEP = 1;
+
     const increment = () => {
         let countList = props.countList.slice();
-        countList[props.index] += 1;
+        countList[props.index] += CHANGE_STEP;
         props.setCountList(countList);
     }
 
     const decrement = () => {
         let countList = props.countList.slice();
-        countList[props.index] -= 1;
+        countList[props.index] -= CHANGE_STEP;
         props.setCountList(countList);
     }
 
