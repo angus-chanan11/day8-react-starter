@@ -9,12 +9,15 @@ const CounterGroupGenerator = (props) => {
             setSize(20)
         else if (sizeInput < 0)
             setSize(0)
-        else if (sizeInput !== null)
+        else if (sizeInput !== null && sizeInput !== props.size){
             setSize(parseInt(sizeInput))
+        }
     }
 
     const handleReset = () => {
-        props.setSize(size)
+        if (size !== props.size){
+            props.setSize(size)
+        }
     }
 
     return <div>
